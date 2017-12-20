@@ -21,10 +21,10 @@ public class CalcAndSave {
 		Configuration conf = new Configuration();
 		System.out.println("Connecting to -- "+conf.get("fs.defaultFS"));
 		
-		FileSystem hdfs = FileSystem.get( new URI( "hdfs://localhost:9000" ), conf );
+		FileSystem hdfs = FileSystem.get( new URI( "hdfs://10.197.121.198:9000" ), conf );
 		System.out.println(hdfs.getHomeDirectory());
 		
-		Path file = new Path("hdfs://localhost:9000/user/yuncui/test.csv");
+		Path file = new Path("hdfs://10.197.121.198:9000/user/yuncui/test.csv");
 		OutputStream os = hdfs.create(file);
 		BufferedWriter br = new BufferedWriter( new OutputStreamWriter( os, "UTF-8" ) );
 		
